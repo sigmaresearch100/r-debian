@@ -1,0 +1,26 @@
+name: Build R for Debian (Docker)
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: debian
+      env:
+        UBUNTU_VERSION: jammy
+
+    steps:
+      -
+        name: Check out repository
+        uses: actions/checkout@v3
+      -
+        name: Build
+        run: bash tools/build.sh
