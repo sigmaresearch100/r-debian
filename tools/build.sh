@@ -4,9 +4,6 @@ set -e
 
 export LANG=en_US.UTF-8
 
-# remove R if it exists
-dpkg --remove r-base-core
-
 # install wget
 apt-get update
 apt-get install -y wget
