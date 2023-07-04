@@ -12,7 +12,7 @@ apt-get update
 apt-get install -y wget
 
 # locales
-apt-get install locales-all
+apt-get install -y locales-all
 
 # install R from source
 # from https://raw.githubusercontent.com/rocker-org/rocker-versioned2/master/scripts/install_R_source.sh
